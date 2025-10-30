@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">HomeWork2</string>
+
+    <!-- Login Screen -->
+    <string name="login_title">Вход</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Пароль</string>
+    <string name="login_button">Войти</string>
+    <string name="show_password">Показать пароль</string>
+    <string name="hide_password">Скрыть пароль</string>
+    <string name="email_empty_error">Email не может быть пустым</string>
+    <string name="email_invalid_error">Некорректный формат email</string>
+    <string name="password_empty_error">Пароль не может быть пустым</string>
+    <string name="password_length_error">Пароль должен содержать минимум 8 символов</string>
+    <!-- Login Screen END -->
+
+    <!-- Notes Screen -->
+    <string name="notes_title">Мои заметки</string>
+    <string name="user_email">Пользователь: %s</string>
+    <string name="color_scheme_label">Цвет темы</string>
+    <string name="add_note_button">Добавить заметку</string>
+    <string name="no_notes_message">Нет заметок</string>
+    <string name="no_notes_hint">Нажмите кнопку выше, чтобы добавить первую заметку</string>
+    <!-- Notes Screen END -->
+
+    <!-- Add Note Screen -->
+    <string name="add_note_title">Новая заметка</string>
+    <string name="note_title_hint">Заголовок заметки</string>
+    <string name="note_content_hint">Содержание заметки</string>
+    <string name="note_title_empty_error">Заголовок не может быть пустым</string>
+    <string name="save_note_button">Сохранить заметку</string>
+    <string name="title_placeholder">Введите заголовок</string>
+    <string name="content_placeholder">Введите содержание (необязательно)</string>
+    <!-- Add Note Screen END -->
+
+    <!-- Color Schemes -->
+    <string name="color_scheme_blue">Синий</string>
+    <string name="color_scheme_red">Красный</string>
+    <string name="color_scheme_green">Зеленый</string>
+    <string name="color_scheme_purple">Фиолетовый</string>
+    <!-- Color Schemes END -->
+</resources>
