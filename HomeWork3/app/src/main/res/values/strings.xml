@@ -1,0 +1,76 @@
+<resources>
+    <string name="app_name">Homework3</string>
+
+    <!-- Navigation -->
+    <string name="settings">Настройки</string>
+    <string name="edit">Редактировать</string>
+    <string name="messages">Сообщения</string>
+    <!-- Navigation END -->
+
+    <!-- Notification Settings Screen -->
+    <string name="notification_settings">Настройки уведомлений</string>
+    <string name="title_required">Заголовок (обязательно)</string>
+    <string name="message">Сообщение</string>
+    <string name="expandable_notification">Расширяемое уведомление</string>
+    <string name="notification_priority">Приоритет уведомления</string>
+    <string name="select_priority">Выберите приоритет</string>
+    <string name="open_app_on_click">Открыть приложение по клику</string>
+    <string name="add_reply_action">Добавить действие ответа</string>
+    <string name="create_notification">Создать уведомление</string>
+    <!-- Notification Settings Screen END -->
+
+    <!-- Priorities -->
+    <string name="priority_min">Минимальный</string>
+    <string name="priority_low">Низкий</string>
+    <string name="priority_medium">Средний</string>
+    <string name="priority_high">Высокий</string>
+    <!-- Priorities END -->
+
+    <!-- Errors -->
+    <string name="error_empty_title">Заголовок не может быть пустым</string>
+    <!-- Errors END -->
+
+    <!-- Notification Channels -->
+    <string name="notification_channel_default">Обычные уведомления</string>
+    <string name="notification_channel_default_desc">Канал для обычных уведомлений</string>
+    <string name="notification_channel_high_priority">Важные уведомления</string>
+    <string name="notification_channel_high_priority_desc">Канал для срочных уведомлений</string>
+    <!-- Notification Channels END -->
+
+    <!-- Reply Action -->
+    <string name="type_your_reply">Введите ваш ответ...</string>
+    <string name="reply">Ответить</string>
+    <string name="reply_prefix">Ответ: %s</string>
+    <!-- Reply Action END -->
+
+    <!-- User Messages Screen -->
+    <string name="user_messages">Сообщения пользователя</string>
+    <string name="clear_all">Очистить все</string>
+    <string name="no_messages">Нет сообщений</string>
+    <string name="type_your_message">Введите ваше сообщение...</string>
+    <string name="send">Отправить</string>
+    <string name="from_reply">Из ответа</string>
+    <!-- User Messages Screen END -->
+
+    <!-- Notification Edit Screen -->
+    <string name="edit_notification">Редактировать уведомление</string>
+    <string name="notification_id">ID уведомления</string>
+    <string name="enter_notification_id">Введите ID уведомления</string>
+    <string name="new_message">Новое сообщение</string>
+    <string name="update_notification">Обновить уведомление</string>
+    <string name="dismiss_all_notifications">Закрыть все уведомления</string>
+    <!-- Notification Edit Screen END -->
+
+    <!-- Toast Messages -->
+    <string name="error_enter_valid_id">Введите корректный ID</string>
+    <string name="notification_updated">Уведомление обновлено</string>
+    <string name="error_notification_not_found">Уведомление не найдено</string>
+    <string name="all_notifications_dismissed">Все уведомления закрыты</string>
+    <string name="error_no_notifications">Нет активных уведомлений</string>
+    <!-- Toast Messages END -->
+
+    <!-- Additional Strings -->
+    <string name="updated_notification">Обновленное уведомление</string>
+    <string name="notification_prefix">Уведомление: %s</string>
+    <!-- Additional Strings END -->
+</resources>
