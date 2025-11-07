@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="login_route">login</string>
-    <string name="notes_route">notes</string>
-    <string name="add_note_route">addNote</string>
-    <string name="email_arg">email</string>
-</resources>
