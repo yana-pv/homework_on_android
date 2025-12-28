@@ -1,0 +1,106 @@
+<resources>
+    <string name="app_name">Календарь событий</string>
+
+    <!-- Auth -->
+    <string name="login">Вход</string>
+    <string name="register">Регистрация</string>
+    <string name="username">Имя пользователя</string>
+    <string name="password">Пароль</string>
+    <string name="confirm_password">Подтвердите пароль</string>
+    <string name="login_button">Войти</string>
+    <string name="register_button">Зарегистрироваться</string>
+    <string name="dont_have_account">Нет аккаунта? Зарегистрироваться</string>
+    <string name="already_have_account">Уже есть аккаунт? Войти</string>
+    <!-- END Auth -->
+
+    <!-- Errors -->
+    <string name="error_username_empty">Имя пользователя не может быть пустым</string>
+    <string name="error_password_empty">Пароль не может быть пустым</string>
+    <string name="error_password_short">Пароль должен содержать не менее 6 символов</string>
+    <string name="error_passwords_not_match">Пароли не совпадают</string>
+    <string name="error_user_not_found">Пользователь не найден</string>
+    <string name="error_user_exists">Пользователь уже существует</string>
+    <string name="error_invalid_credentials">Неверное имя пользователя или пароль</string>
+    <string name="error_title_empty">Название не может быть пустым</string>
+    <string name="error_date_invalid">Неверная дата</string>
+    <string name="error_date_empty">Введите дату</string>
+    <string name="error_time_empty">Введите время</string>
+    <!-- END Errors -->
+
+    <!-- Events -->
+    <string name="events_list">События</string>
+    <string name="add_event">Добавить событие</string>
+    <string name="no_events">Пока нет событий. Добавьте первое!</string>
+    <string name="event_title">Название</string>
+    <string name="event_description">Описание</string>
+    <string name="event_date">Дата</string>
+    <string name="event_category">Категория</string>
+    <string name="save_event">Сохранить</string>
+    <string name="delete_event">Удалить</string>
+    <string name="date_format_hint">Дата (ДД.ММ.ГГГГ)</string>
+    <string name="date_placeholder">15.12.2024</string>
+    <string name="time_format_hint">Время (ЧЧ:ММ)</string>
+    <string name="time_placeholder">14:30</string>
+    <string name="event_creation_failed">Не удалось создать событие</string>
+    <!-- END Events -->
+
+    <!-- Categories -->
+    <string name="category_personal">Личное</string>
+    <string name="category_work">Работа</string>
+    <string name="category_entertainment">Развлечения</string>
+    <string name="category_health">Здоровье</string>
+    <string name="category_learning">Обучение</string>
+    <string name="category_other">Другое</string>
+    <!-- END Categories -->
+
+    <!-- Profile -->
+    <string name="profile">Профиль</string>
+    <string name="welcome">Добро пожаловать</string>
+    <string name="events_count">Количество событий: %d</string>
+    <string name="logout">Выйти</string>
+    <string name="delete_account">Удалить аккаунт</string>
+    <string name="delete_account_dialog_title">Удаление аккаунта</string>
+    <string name="delete_account_dialog_message">Вы уверены, что хотите удалить свой аккаунт? Вы сможете восстановить его в течение 7 дней.</string>
+    <string name="cancel">Отмена</string>
+    <string name="delete">Удалить</string>
+    <!-- END Profile -->
+
+    <!-- Account Recovery -->
+    <string name="account_deleted">Аккаунт удален</string>
+    <string name="account_deleted_message">Ваш аккаунт был удален %s. Вы можете восстановить его или удалить окончательно.</string>
+    <string name="restore_account">Восстановить аккаунт</string>
+    <string name="delete_permanently">Удалить окончательно</string>
+    <string name="account_recovery_restricted">Учетная запись была удалена. Пожалуйста, войдите в систему для восстановления</string>
+    <string name="restore_last_day">Остался последний день!</string>
+    <string name="restore_time_running_out">Время заканчивается</string>
+    <string name="restore_account_hint">Успейте восстановить аккаунт</string>
+    <string name="until_permanent_deletion">До окончательного удаления</string>
+    <!-- END Account Recovery -->
+
+    <!-- Sorting -->
+    <string name="sort_by">Сортировать по</string>
+    <string name="sort_date_asc">Дата (сначала новые)</string>
+    <string name="sort_date_desc">Дата (сначала старые)</string>
+    <string name="sort_title_asc">Название (A-Z)</string>
+    <string name="sort_title_desc">Название (Z-A)</string>
+    <string name="sort_category">Категория</string>
+    <!-- END Sorting -->
+
+    <!-- Loading -->
+    <string name="loading">Загрузка...</string>
+    <string name="processing">Обработка...</string>
+    <!-- END Loading -->
+
+    <!-- Internal Messages -->
+    <string name="account_not_found">Пользователь не найден</string>
+    <string name="wrong_password">Неверный пароль</string>
+    <string name="user_already_exists">Пользователь уже существует</string>
+    <string name="registration_failed">Не удалось выполнить регистрацию</string>
+    <string name="login_failed_after_registration">Регистрация прошла успешно, но войти в систему не удалось</string>
+    <!-- END Internal Messages -->
+
+    <!-- Constants -->
+    <string name="auto_purge_interval_hours">24</string>
+    <string name="days_to_restore_account">7</string>
+    <!-- END Constants -->
+</resources>
