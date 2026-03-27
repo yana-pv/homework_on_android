@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App -->
+    <string name="app_name">Recipe App</string>
+    <!-- END App -->
+
+    <!-- Search Screen -->
+    <string name="search_hint">Search recipe...</string>
+    <string name="all_recipes">All Recipes</string>
+    <string name="search_button">Search</string>
+    <string name="retry">Retry</string>
+    <string name="no_recipes_found">No recipes found. Try another search term.</string>
+    <string name="empty_search_hint">Enter a recipe name and press Search on keyboard</string>
+    <string name="loading">Loading...</string>
+    <!-- END Search Screen -->
+
+    <!-- Detail Screen -->
+    <string name="back">Back</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="instructions">Instructions</string>
+    <!-- END Detail Screen -->
+
+    <!-- Errors -->
+    <string name="error_no_internet">No internet connection. Please check your network.</string>
+    <string name="error_timeout">Connection timeout. Please try again.</string>
+    <string name="error_not_found">Recipe not found.</string>
+    <string name="error_server">Server error. Please try again later.</string>
+    <string name="error_network">Network error: %s</string>
+    <string name="error_parsing">Error loading data. Please try again.</string>
+    <string name="error_unknown">Error: %s</string>
+    <string name="error_no_recipes">No recipes found for \'%s\'</string>
+    <!-- END Errors -->
+
+    <!-- Data Source -->
+    <string name="data_from_cache">Data from: CACHE</string>
+    <string name="data_from_server">Data from: SERVER</string>
+    <!-- END Data Source -->
+</resources>

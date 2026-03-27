@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding_small">4dp</dimen>
+    <dimen name="padding_medium">8dp</dimen>
+    <dimen name="padding_normal">12dp</dimen>
+    <dimen name="padding_large">16dp</dimen>
+    <dimen name="padding_xlarge">24dp</dimen>
+
+    <dimen name="margin_small">4dp</dimen>
+    <dimen name="margin_medium">8dp</dimen>
+    <dimen name="margin_normal">12dp</dimen>
+    <dimen name="margin_large">16dp</dimen>
+    <dimen name="margin_xlarge">24dp</dimen>
+
+    <dimen name="corner_small">8dp</dimen>
+    <dimen name="corner_medium">12dp</dimen>
+    <dimen name="corner_large">20dp</dimen>
+
+    <dimen name="image_height_large">400dp</dimen>
+    <dimen name="image_height_medium">300dp</dimen>
+    <dimen name="image_height_card">180dp</dimen>
+
+    <dimen name="button_back_size">40dp</dimen>
+    <dimen name="icon_back_size">24dp</dimen>
+
+    <dimen name="grid_spacing">12dp</dimen>
+    <dimen name="card_aspect_ratio">0.8f</dimen>
+</resources>
