@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="search_border_focused">#FF000000</color>
+    <color name="search_border_unfocused">#FFB3B3B3</color>
+    <color name="card_pressed">#FF8DF439</color>
+    <color name="section_background">#FFEAEAEA</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+    <color name="transparent_black_50">#80000000</color>
+</resources>
