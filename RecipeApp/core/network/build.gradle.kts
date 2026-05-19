@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.kapt)
 }
 
 android {
@@ -38,6 +39,9 @@ dependencies {
     api(libs.retrofit.converter.gson)
     api(libs.okhttp.logging.interceptor)
     api(libs.gson)
+
+    implementation(libs.dagger)
+    kapt(libs.dagger.compiler)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
