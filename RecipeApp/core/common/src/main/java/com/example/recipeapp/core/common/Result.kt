@@ -1,6 +1,7 @@
 package com.example.recipeapp.core.common
 
 sealed class Result<out T> {
+    object Loading : Result<Nothing>()
     data class Success<T>(val data: T) : Result<T>()
     data class NetworkError(val cause: Throwable) : Result<Nothing>()
     data class ServerError(val code: Int, val message: String) : Result<Nothing>()

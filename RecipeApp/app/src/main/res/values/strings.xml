@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">RecipeApp</string>
+
+    <!-- App Info Screen -->
+    <string name="info_title">Welcome to RecipeApp!</string>
+    <string name="info_description">Our app helps you find the best recipes from around the world.\n\n• Huge database of dishes\n• Ingredients and detailed cooking instructions\n• Smart notifications about new recipes</string>
+    <string name="info_button_text">Got it, let\'s start!</string>
+
+    <!-- Notifications -->
+    <string name="channel_promo_name">Promotions</string>
+    <string name="channel_promo_desc">Special offers and recipe collections</string>
+    <string name="channel_auth_name">Authentication</string>
+    <string name="channel_auth_desc">Security alerts and login notifications</string>
+    <string name="channel_default_name">General</string>
+    <string name="channel_default_desc">Other notifications</string>
+
+    <string name="error_loading_details">Error loading details</string>
 </resources>

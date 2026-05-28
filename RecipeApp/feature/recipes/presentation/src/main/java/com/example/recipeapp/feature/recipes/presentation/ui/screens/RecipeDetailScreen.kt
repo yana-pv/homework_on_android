@@ -11,6 +11,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
@@ -21,33 +22,19 @@ import coil.compose.AsyncImage
 import com.example.recipeapp.feature.recipes.presentation.R
 import com.example.recipeapp.feature.recipes.domain.model.RecipeDetail
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun RecipeDetailScreen(
     detail: RecipeDetail,
     onBack: () -> Unit
 ) {
-    Scaffold(
-        containerColor = colorResource(id = R.color.white),
-        topBar = {
-            TopAppBar(
-                title = {},
-                colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = Color.Transparent
-                ),
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(0.dp)
-            )
-        }
-    ) { paddingValues ->
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(colorResource(id = R.color.white))
+    ) {
         LazyColumn(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(paddingValues)
-                .padding(bottom = dimensionResource(id = R.dimen.padding_large))
+            modifier = Modifier.fillMaxSize()
         ) {
-            // Фото рецепта
             item {
                 Box(
                     modifier = Modifier
@@ -61,29 +48,17 @@ fun RecipeDetailScreen(
                         contentScale = ContentScale.Crop
                     )
 
-                    // Кнопка назад
                     Box(
                         modifier = Modifier
-                            .align(Alignment.TopStart)
-                            .windowInsetsPadding(WindowInsets.statusBars)
-                            .padding(start = dimensionResource(id = R.dimen.padding_large))
-                            .size(dimensionResource(id = R.dimen.button_back_size))
+                            .fillMaxWidth()
+                            .height(120.dp)
                             .background(
-                                color = colorResource(id = R.color.transparent_black_50),
-                                shape = RoundedCornerShape(dimensionResource(id = R.dimen.corner_large))
+                                Brush.verticalGradient(
+                                    listOf(Color.Black.copy(alpha = 0.5f), Color.Transparent)
+                                )
                             )
-                            .clickable { onBack() },
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Icon(
-                            imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                            contentDescription = stringResource(id = R.string.back),
-                            tint = colorResource(id = R.color.white),
-                            modifier = Modifier.size(dimensionResource(id = R.dimen.icon_back_size))
-                        )
-                    }
+                    )
 
-                    // Карточка с информацией
                     Card(
                         modifier = Modifier
                             .align(Alignment.BottomStart)
@@ -91,7 +66,7 @@ fun RecipeDetailScreen(
                             .padding(dimensionResource(id = R.dimen.padding_large)),
                         shape = RoundedCornerShape(dimensionResource(id = R.dimen.corner_medium)),
                         colors = CardDefaults.cardColors(
-                            containerColor = MaterialTheme.colorScheme.surface.copy(alpha = 0.95f)
+                            containerColor = MaterialTheme.colorScheme.surface.copy(alpha = 0.9f)
                         )
                     ) {
                         Column(modifier = Modifier.padding(dimensionResource(id = R.dimen.padding_large))) {
@@ -121,7 +96,7 @@ fun RecipeDetailScreen(
                 }
             }
 
-            // Заголовок Ingredients
+            // Ingredients header
             item {
                 Box(
                     modifier = Modifier
@@ -141,7 +116,7 @@ fun RecipeDetailScreen(
                 }
             }
 
-            // Ингредиенты
+            // Ingredients list
             item {
                 Column(
                     modifier = Modifier
@@ -159,7 +134,7 @@ fun RecipeDetailScreen(
                 }
             }
 
-            // Заголовок Instructions
+            // Instructions header
             item {
                 Box(
                     modifier = Modifier
@@ -179,7 +154,7 @@ fun RecipeDetailScreen(
                 }
             }
 
-            // Инструкции
+            // Instructions text
             item {
                 Column(
                     modifier = Modifier
@@ -194,6 +169,27 @@ fun RecipeDetailScreen(
                 }
                 Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_large)))
             }
+        }
+
+        // Back button
+        Box(
+            modifier = Modifier
+                .statusBarsPadding()
+                .padding(start = dimensionResource(id = R.dimen.padding_large), top = dimensionResource(id = R.dimen.padding_medium))
+                .size(dimensionResource(id = R.dimen.button_back_size))
+                .background(
+                    color = colorResource(id = R.color.transparent_black_50),
+                    shape = RoundedCornerShape(dimensionResource(id = R.dimen.corner_large))
+                )
+                .clickable { onBack() },
+            contentAlignment = Alignment.Center
+        ) {
+            Icon(
+                imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                contentDescription = stringResource(id = R.string.back),
+                tint = colorResource(id = R.color.white),
+                modifier = Modifier.size(dimensionResource(id = R.dimen.icon_back_size))
+            )
         }
     }
 }

@@ -1,0 +1,7 @@
+<resources>
+    <dimen name="padding_info_screen">24dp</dimen>
+    <dimen name="spacing_info_items">16dp</dimen>
+    <dimen name="spacing_info_button">24dp</dimen>
+    <dimen name="text_size_info_title">20sp</dimen>
+    <dimen name="text_size_info_body">16sp</dimen>
+</resources>

@@ -18,6 +18,7 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
+import com.example.recipeapp.feature.recipes.domain.model.Recipe
 import com.example.recipeapp.feature.recipes.presentation.R
 import com.example.recipeapp.feature.recipes.presentation.MainViewModel
 import com.example.recipeapp.feature.recipes.presentation.state.SearchState
@@ -28,7 +29,8 @@ fun SearchScreen(
     viewModel: MainViewModel,
     searchQuery: String,
     onSearchQueryChange: (String) -> Unit,
-    onSearch: (String) -> Unit
+    onSearch: (String) -> Unit,
+    onRecipeClick: (Recipe) -> Unit
 ) {
     val keyboardController = LocalSoftwareKeyboardController.current
     val focusManager = LocalFocusManager.current
@@ -130,7 +132,7 @@ fun SearchScreen(
                         items(state.recipes, key = { it.id }) { recipe ->
                             RecipeGridCard(
                                 recipe = recipe,
-                                onClick = { viewModel.getRecipeDetail(recipe.id) }
+                                onClick = { onRecipeClick(recipe) }
                             )
                         }
                     }
