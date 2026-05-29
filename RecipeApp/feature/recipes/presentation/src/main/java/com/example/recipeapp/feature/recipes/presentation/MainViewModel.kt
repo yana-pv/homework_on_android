@@ -43,9 +43,6 @@ class MainViewModel @Inject constructor(
 
         viewModelScope.launch {
             when (val result = searchUseCase(query)) {
-                is Result.Loading -> {
-                    _searchState.value = SearchState.Loading
-                }
                 is Result.Success -> {
                     _searchState.value = if (result.data.isEmpty()) {
                         SearchState.Error(context.getString(R.string.error_no_recipes, query))
@@ -53,21 +50,12 @@ class MainViewModel @Inject constructor(
                         SearchState.Success(result.data, repository.getLastDataSource())
                     }
                 }
-                is Result.NetworkError -> {
-                    _searchState.value = SearchState.Error(context.getString(R.string.error_no_internet))
-                }
-                is Result.ServerError -> {
-                    _searchState.value = SearchState.Error(context.getString(R.string.error_server))
-                }
-                is Result.ParsingError -> {
-                    _searchState.value = SearchState.Error(context.getString(R.string.error_parsing))
-                }
-                is Result.NoDataError -> {
-                    _searchState.value = SearchState.Error(context.getString(R.string.error_no_recipes, query))
-                }
-                is Result.UnknownError -> {
-                    _searchState.value = SearchState.Error(context.getString(R.string.error_unknown, result.cause.message))
-                }
+                is Result.Loading -> _searchState.value = SearchState.Loading
+                is Result.NetworkError -> _searchState.value = SearchState.Error(context.getString(R.string.error_no_internet))
+                is Result.ServerError -> _searchState.value = SearchState.Error(context.getString(R.string.error_server))
+                is Result.ParsingError -> _searchState.value = SearchState.Error(context.getString(R.string.error_parsing))
+                is Result.NoDataError -> _searchState.value = SearchState.Error(context.getString(R.string.error_no_recipes, query))
+                is Result.UnknownError -> _searchState.value = SearchState.Error(context.getString(R.string.error_unknown, result.cause.message))
             }
         }
     }

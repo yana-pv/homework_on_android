@@ -29,8 +29,8 @@ fun RecipeGridCard(
 ) {
     var isPressed by remember { mutableStateOf(false) }
     val interactionSource = remember { MutableInteractionSource() }
-    val cardAspectRatio = androidx.compose.ui.platform.LocalContext.current.resources
-        .getFloat(R.dimen.card_aspect_ratio)
+    val context = androidx.compose.ui.platform.LocalContext.current
+    val cardAspectRatio = remember(context) { context.resources.getFloat(R.dimen.card_aspect_ratio)}
 
     Card(
         modifier = Modifier

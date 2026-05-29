@@ -23,6 +23,7 @@ import com.example.recipeapp.feature.recipes.presentation.R
 import com.example.recipeapp.feature.recipes.presentation.MainViewModel
 import com.example.recipeapp.feature.recipes.presentation.state.SearchState
 import com.example.recipeapp.feature.recipes.presentation.ui.components.RecipeGridCard
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
 @Composable
 fun SearchScreen(
@@ -34,7 +35,7 @@ fun SearchScreen(
 ) {
     val keyboardController = LocalSoftwareKeyboardController.current
     val focusManager = LocalFocusManager.current
-    val searchState by viewModel.searchState.collectAsState()
+    val searchState by viewModel.searchState.collectAsStateWithLifecycle()
     var isFocused by remember { mutableStateOf(false) }
 
     Column(
