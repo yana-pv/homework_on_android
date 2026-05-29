@@ -1,5 +1,8 @@
 package com.example.recipeapp.feature.recipes.domain.model
 
+import androidx.compose.runtime.Immutable
+
+@Immutable
 data class Recipe(
     val id: String,
     val title: String,
@@ -8,6 +11,7 @@ data class Recipe(
     val area: String?
 )
 
+@Immutable
 data class RecipeDetail(
     val id: String,
     val title: String,
@@ -18,6 +22,7 @@ data class RecipeDetail(
     val instructions: String
 )
 
+@Immutable
 data class Ingredient(
     val name: String,
     val measure: String

@@ -35,11 +35,14 @@ android {
 dependencies {
     implementation(project(":core:common"))
 
+    implementation(libs.androidx.compose.runtime)
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.dagger)
     kapt(libs.dagger.compiler)
 
     testImplementation(libs.junit)
+    testImplementation(libs.mockk)
+    testImplementation(libs.kotlinx.coroutines.test)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 }
