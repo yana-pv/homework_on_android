@@ -23,6 +23,7 @@ import com.example.recipeapp.feature.recipes.presentation.R
 import com.example.recipeapp.feature.recipes.presentation.MainViewModel
 import com.example.recipeapp.feature.recipes.presentation.state.SearchState
 import com.example.recipeapp.feature.recipes.presentation.ui.components.RecipeGridCard
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
 @Composable
 fun SearchScreen(
@@ -30,11 +31,12 @@ fun SearchScreen(
     searchQuery: String,
     onSearchQueryChange: (String) -> Unit,
     onSearch: (String) -> Unit,
-    onRecipeClick: (Recipe) -> Unit
+    onRecipeClick: (Recipe) -> Unit,
+    onShowChart: () -> Unit
 ) {
     val keyboardController = LocalSoftwareKeyboardController.current
     val focusManager = LocalFocusManager.current
-    val searchState by viewModel.searchState.collectAsState()
+    val searchState by viewModel.searchState.collectAsStateWithLifecycle()
     var isFocused by remember { mutableStateOf(false) }
 
     Column(
@@ -76,11 +78,21 @@ fun SearchScreen(
 
         Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.margin_large)))
 
-        Text(
-            text = stringResource(id = R.string.all_recipes),
-            style = MaterialTheme.typography.titleLarge,
-            modifier = Modifier.padding(bottom = dimensionResource(id = R.dimen.padding_medium))
-        )
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(bottom = dimensionResource(id = R.dimen.padding_medium)),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(
+                text = stringResource(id = R.string.all_recipes),
+                style = MaterialTheme.typography.titleLarge
+            )
+            Button(onClick = onShowChart) {
+                Text("Show Chart")
+            }
+        }
 
         when (val state = searchState) {
             is SearchState.Loading -> {

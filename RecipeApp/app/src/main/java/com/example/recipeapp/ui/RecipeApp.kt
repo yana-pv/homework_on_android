@@ -14,6 +14,7 @@ import com.example.recipeapp.feature.recipes.presentation.MainViewModel
 import com.example.recipeapp.feature.recipes.presentation.RecipeDetailViewModel
 import com.example.recipeapp.feature.recipes.presentation.di.RecipeDetailComponent
 import com.example.recipeapp.feature.recipes.presentation.di.ViewModelFactory
+import com.example.recipeapp.feature.recipes.presentation.ui.screens.ChartScreen
 import com.example.recipeapp.feature.recipes.presentation.ui.screens.RecipeDetailScreen
 import com.example.recipeapp.feature.recipes.presentation.ui.screens.SearchScreen
 import com.google.firebase.crashlytics.FirebaseCrashlytics
@@ -26,6 +27,7 @@ fun RecipeApp(
     val mainViewModel: MainViewModel = viewModel(factory = viewModelFactory)
 
     var selectedRecipeId by remember { mutableStateOf<String?>(null) }
+    var showChart by remember { mutableStateOf(false) }
     val snackbarMessage by mainViewModel.snackbarMessage.collectAsState()
     val snackbarHostState = remember { SnackbarHostState() }
     var searchQuery by remember { mutableStateOf("") }
@@ -47,7 +49,10 @@ fun RecipeApp(
         }
 
         Box(modifier = Modifier.fillMaxSize()) {
-            if (selectedRecipeId != null) {
+            if (showChart) {
+                ChartScreen(onBack = { showChart = false })
+            }
+            else if (selectedRecipeId != null) {
                 val detailViewModel: RecipeDetailViewModel = remember(selectedRecipeId) {
                     detailComponentFactory.create(selectedRecipeId!!).viewModel()
                 }
@@ -82,7 +87,8 @@ fun RecipeApp(
                     onSearch = { mainViewModel.searchRecipes(it) },
                     onRecipeClick = { recipe ->
                         selectedRecipeId = recipe.id
-                    }
+                    },
+                    onShowChart = { showChart = true }
                 )
             }
         }

@@ -8,6 +8,7 @@ class SearchRecipesUseCase(
     private val repository: RecipeRepository
 ) {
     suspend operator fun invoke(query: String): Result<List<Recipe>> {
+        if (query.isBlank()) return Result.Success(emptyList())
         return repository.searchRecipes(query)
     }
 }
