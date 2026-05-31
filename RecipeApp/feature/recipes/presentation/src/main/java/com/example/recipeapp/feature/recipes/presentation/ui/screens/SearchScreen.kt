@@ -31,7 +31,8 @@ fun SearchScreen(
     searchQuery: String,
     onSearchQueryChange: (String) -> Unit,
     onSearch: (String) -> Unit,
-    onRecipeClick: (Recipe) -> Unit
+    onRecipeClick: (Recipe) -> Unit,
+    onShowChart: () -> Unit
 ) {
     val keyboardController = LocalSoftwareKeyboardController.current
     val focusManager = LocalFocusManager.current
@@ -77,11 +78,21 @@ fun SearchScreen(
 
         Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.margin_large)))
 
-        Text(
-            text = stringResource(id = R.string.all_recipes),
-            style = MaterialTheme.typography.titleLarge,
-            modifier = Modifier.padding(bottom = dimensionResource(id = R.dimen.padding_medium))
-        )
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(bottom = dimensionResource(id = R.dimen.padding_medium)),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(
+                text = stringResource(id = R.string.all_recipes),
+                style = MaterialTheme.typography.titleLarge
+            )
+            Button(onClick = onShowChart) {
+                Text("Show Chart")
+            }
+        }
 
         when (val state = searchState) {
             is SearchState.Loading -> {

@@ -22,6 +22,7 @@ import com.example.recipeapp.feature.recipes.data.api.MealApi
 import com.example.recipeapp.feature.recipes.data.cache.RecipeCache
 import com.example.recipeapp.feature.recipes.data.repository.RecipeRepositoryImpl
 import com.example.recipeapp.feature.recipes.domain.usecase.GetRecipeDetailUseCase
+import com.example.recipeapp.feature.recipes.presentation.ui.screens.ChartScreen
 import com.example.recipeapp.feature.recipes.presentation.ui.screens.RecipeDetailScreen
 import com.example.recipeapp.feature.recipes.presentation.ui.screens.SearchScreen
 import com.example.recipeapp.feature.recipes.presentation.ui.theme.RecipeAppTheme
@@ -46,6 +47,7 @@ fun RecipeApp() {
     )
 
     var selectedRecipeId by remember { mutableStateOf<String?>(null) }
+    var showChart by remember { mutableStateOf(false) }
     val snackbarMessage by viewModel.snackbarMessage.collectAsStateWithLifecycle()
     val snackbarHostState = remember { SnackbarHostState() }
     var searchQuery by remember { mutableStateOf("") }
@@ -61,7 +63,10 @@ fun RecipeApp() {
         snackbarHost = { SnackbarHost(snackbarHostState) }
     ) { paddingValues ->
         Box(modifier = Modifier.padding(paddingValues)) {
-            if (selectedRecipeId != null) {
+            if (showChart) {
+                ChartScreen(onBack = { showChart = false })
+            } 
+            else if (selectedRecipeId != null) {
                 val detailViewModel: RecipeDetailViewModel = viewModel(
                     key = selectedRecipeId,
                     factory = object : ViewModelProvider.Factory {
@@ -105,7 +110,8 @@ fun RecipeApp() {
                     searchQuery = searchQuery,
                     onSearchQueryChange = { searchQuery = it },
                     onSearch = { viewModel.searchRecipes(it) },
-                    onRecipeClick = { recipe -> selectedRecipeId = recipe.id }
+                    onRecipeClick = { recipe -> selectedRecipeId = recipe.id },
+                    onShowChart = { showChart = true }
                 )
             }
         }

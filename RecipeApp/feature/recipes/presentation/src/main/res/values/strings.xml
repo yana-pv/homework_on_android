@@ -35,4 +35,10 @@
     <string name="data_from_cache">Data from: CACHE</string>
     <string name="data_from_server">Data from: SERVER</string>
     <!-- END Data Source -->
+
+    <!-- Chart Screen -->
+    <string name="chart_screen_title">Circular Chart</string>
+    <string name="chart_demo_title">Custom View Demo</string>
+    <string name="chart_percent_format">%1$d%%</string>
+    <!-- END Chart Screen -->
 </resources>
